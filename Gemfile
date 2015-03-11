@@ -22,5 +22,8 @@ group :development do
  gem 'sqlite3'
 
  # Visualize DB
- gem "rails-erd"
+ gem 'rails-erd'
+
+ # PRY
+ gem 'pry-rails'
 end
