@@ -13,6 +13,9 @@ gem 'spring',        group: :development
 # BootStrap + SASS
 gem 'bootstrap-sass'
 
+# Faker for Seeding
+gem 'faker'
+
 group :production do
  gem 'pg'
  gem 'rails_12factor'
