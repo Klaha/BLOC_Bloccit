@@ -20,4 +20,7 @@ end
  
 group :development do
  gem 'sqlite3'
+
+ # Visualize DB
+ gem "rails-erd"
 end
