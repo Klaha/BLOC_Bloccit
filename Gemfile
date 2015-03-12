@@ -16,6 +16,9 @@ gem 'bootstrap-sass'
 # Faker for Seeding
 gem 'faker'
 
+# User Authentication
+gem 'devise'
+
 group :production do
  gem 'pg'
  gem 'rails_12factor'
