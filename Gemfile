@@ -19,6 +19,9 @@ gem 'faker'
 # User Authentication
 gem 'devise'
 
+# Sensible Data
+gem 'figaro', '1.0'
+
 group :production do
  gem 'pg'
  gem 'rails_12factor'
