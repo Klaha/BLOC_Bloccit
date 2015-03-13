@@ -22,6 +22,9 @@ gem 'devise'
 # Sensible Data
 gem 'figaro', '1.0'
 
+# Authorizations
+gem 'pundit'
+
 group :production do
  gem 'pg'
  gem 'rails_12factor'
