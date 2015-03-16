@@ -25,6 +25,9 @@ gem 'figaro', '1.0'
 # Authorizations
 gem 'pundit'
 
+# MarkDown
+gem 'redcarpet'
+
 group :production do
  gem 'pg'
  gem 'rails_12factor'
