@@ -28,6 +28,13 @@ gem 'pundit'
 # MarkDown
 gem 'redcarpet'
 
+# Image Upload
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Uploads to S3
+gem 'fog'
+
 group :production do
  gem 'pg'
  gem 'rails_12factor'

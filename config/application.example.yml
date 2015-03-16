@@ -1,3 +1,9 @@
 SENDGRID_PASSWORD:
 SENDGRID_USERNAME:
 SECRET_KEY_BASE:
+AWS_ACCESS_KEY_ID:
+AWS_SECRET_ACCESS_KEY:
+development:
+  AWS_BUCKET: jm-bloccit-development
+production:
+  AWS_BUCKET: jm-bloccit-production
