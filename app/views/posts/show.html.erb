@@ -8,6 +8,19 @@
       <%= @post.user.name %>
     </small>
     <p><%= markdown_to_html @post.body %></p>
+    <!-- We could use < % render partial: 'comments/comments', collection: @comments % > 
+      so we could skip the @comments.each part. Or we can use < %= # render @comments % > 
+      that is more terse.
+    -->
+    <% @comments.each do |comment| %>
+      <%= render partial: 'comments/comments', locals: { comment: comment } %>
+    <% end %>
+
+    <% if current_user %>
+      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+    <% end %>
+    
+    <%= will_paginate @comments %>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
