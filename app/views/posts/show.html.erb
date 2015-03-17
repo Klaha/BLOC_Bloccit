@@ -16,7 +16,7 @@
       <%= render partial: 'comments/comments', locals: { comment: comment } %>
     <% end %>
 
-    <% if current_user %>
+    <% if policy(@comment).new? %>
       <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
     <% end %>
     
