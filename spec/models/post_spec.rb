@@ -30,11 +30,11 @@ require 'rails_helper'
      end
    end
 
-   describe '#create_vote' do
+   describe '#save_with_initial_vote' do
      it "generates an up-vote when explicitly called" do
        post = associated_post
        expect( post.up_votes ).to eq(0)
-       post.create_vote
+       post.save_with_initial_vote
        expect( post.up_votes ).to eq(1)
      end
    end
