@@ -6,6 +6,7 @@ describe User do
 
   before do
     @post = associated_post
+    @post2 = associated_post
     @user = authenticated_user
     @comment = Comment.new(body: 'My comment', post: @post, user_id: 10000)
   end
@@ -18,6 +19,12 @@ describe User do
     it "returns the appropriate favorite if it exists" do
       @user.favorites.create(post: @post, user: @user)
       expect( @user.favorited(@post) ).to be
+    end
+
+    it "returns `nil` if the user has favorited another post" do
+      @user.favorites.create(post: @post, user: @user)
+      expect( @user.favorited(@post) ).to be
+      expect( @user.favorited(@post2) ).to be_nil
     end
   end
 end
