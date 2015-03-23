@@ -18,5 +18,13 @@ module ApplicationHelper
     redcarpet = Redcarpet::Markdown.new(renderer, extensions)
     (redcarpet.render markdown).html_safe
   end
+
+  def up_vote_link_classes(post)
+    (current_user.voted(post) && current_user.voted(post).up_vote?) ? 'voted' : ''
+  end
+
+  def down_vote_link_classes(post)
+    (current_user.voted(post) && current_user.voted(post).down_vote?) ? 'voted' : '' 
+  end
   
 end
