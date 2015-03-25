@@ -14,7 +14,7 @@
       that is more terse.
     -->
     <% @comments.each do |comment| %>
-      <%= render partial: 'comments/comments', locals: { comment: comment } %>
+      <%= render partial: 'comments/comment', collection: @comments %>
     <% end %>
 
     <% if current_user %>
