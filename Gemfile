@@ -56,6 +56,10 @@ group :development do
  gem 'pry-rails'
 end
 
+group :production, :development do
+  gem 'puma'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara', '~> 2.2.0'
