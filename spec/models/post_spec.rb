@@ -6,7 +6,8 @@ require 'rails_helper'
    describe "vote methods" do
  
      before do
-       @post = associated_post
+       @user = create(:user)
+       @post = create(:post, user: @user)
        3.times { @post.votes.create(value: 1) }
        2.times { @post.votes.create(value: -1) }
      end
@@ -31,12 +32,18 @@ require 'rails_helper'
    end
 
    describe '#save_with_initial_vote' do
-     it "generates an up-vote when explicitly called" do
-       post = associated_post
-       expect( post.up_votes ).to eq(0)
-       post.save_with_initial_vote
-       expect( post.up_votes ).to eq(1)
-     end
+    
+    before do
+      @user = create(:user)
+      @post = create(:post, user: @user)
+    end
+
+    it "generates an up-vote when explicitly called" do
+      expect( @post.up_votes ).to eq(0)
+      @post.save_with_initial_vote
+      expect( @post.up_votes ).to eq(1)
+    end
+
    end
  end
  

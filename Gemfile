@@ -41,6 +41,9 @@ gem 'will_paginate', '~> 3.0.5'
 # Performance
 gem 'newrelic_rpm'
 
+# Test-Factories
+gem 'factory_girl_rails', '~> 4.0'
+
 group :production do
  gem 'pg'
  gem 'rails_12factor'

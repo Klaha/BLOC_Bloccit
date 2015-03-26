@@ -2,12 +2,11 @@ require 'rails_helper'
 
 describe Topic do
  describe "scopes" do
-   include TestFactories
 
    before do 
        @public_topic = Topic.create # default is public
        @private_topic = Topic.create(public: false)
-       @user = authenticated_user
+       @user = create(:user)
        @user2 = nil
      end
 
