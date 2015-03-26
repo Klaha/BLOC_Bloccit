@@ -1,17 +1,26 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = current_user.comments.build(comment_params)
     @post = Post.find(params[:post_id])
+    @comment = current_user.comments.build(comment_params)
+    @new_comment = Comment.new
+    
     @comment.post = @post
+    authorize @comment
 
     if @comment.save
       flash[:notice] = "Comment was saved"
-      redirect_to [@post.topic, @post]
+      # redirect_to [@post.topic, @post] AJAX
     else
       flash[:error] = "There was an error saving the comment. Please try again."
-      redirect_to [@post.topic, @post]
+      # redirect_to [@post.topic, @post] AJAX
     end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def destroy
@@ -31,7 +40,7 @@ class CommentsController < ApplicationController
       format.html
       format.js
     end
-    
+
   end
 
   private
